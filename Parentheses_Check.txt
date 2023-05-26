@@ -1,0 +1,47 @@
+class Solution {
+public:
+    bool isValid(string str) {
+        
+        int n = str.size();
+        
+        // declare a stack
+        
+        stack<char> st;
+        
+        for(int i = 0; i < n; i++)
+        {
+            // if we get open parenthesis then push into stack
+            
+            if(str[i] == '(' || str[i] == '{' || str[i] == '[')
+            {
+                st.push(str[i]);
+            }
+            
+            else
+            {
+                if(!st.empty())
+                {
+                    if(str[i] == ')' && st.top() != '(')
+                        return false;
+                    
+                    else if(str[i] == '}' && st.top() != '{')
+                        return false;
+                    
+                    else if(str[i] == ']' && st.top() != '[')
+                        return false;
+                    
+                    else 
+                        st.pop();
+                }
+                
+                else
+                    return false;
+            }
+        }
+        
+        if(st.empty())
+            return true;
+        
+        return false;
+    }
+};
