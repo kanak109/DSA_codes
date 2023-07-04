@@ -19,28 +19,60 @@
 
 // take string as input
 
-//#include <stdio.h>
-//#define MAX_LIMIT 20
-//int main()
-//{
-//   char str[MAX_LIMIT];
-//   fgets(str, MAX_LIMIT, stdin);
-//   printf("%s", str);
-//
-//   return 0;
-//}
-
-// ei method e input nile space / tab / enter pawar sathe sathei porer tuku omit korbe //
-
 #include <stdio.h>
+#include<string.h>
+
+
+
 int main()
 {
-    char name[20];
-    printf("Enter name: ");
-    scanf("%s", name);
-    printf("Your name is %s.", name);
+//   char str[50] = "I am Kanak " ;
+//   char str2[50] = "Barua.";
+
+    char str[50], str2[50];
+
+    fgets(str, 50, stdin);
+    str[strlen(str)-1] = '\0';
+    fgets(str2, 50, stdin);
+    str2[strlen(str2)-1] = '\0';
+
+//    gets(str);
+//    gets(str2);
+
+//    printf("type the first string: ");
+//    scanf("%s",str);
+//
+//    printf("\ntype the  second string: ");
+//    scanf("%s", str2);
+
+//    int i=0, j =0, len=0;
+//
+//    while(str[i]!='\0'){
+//
+//        i++;
+//        len++;
+//   }
+//
+//    while(str2[j]!='\0'){
+//        str[len+j] = str2[j];
+//        j++;
+//
+//   }
+
+    strcat(str,str2);
+   // puts(str);
+    printf("%s\n", str);
+
+    for(int i=0; i<strlen(str); i++)
+    {
+        printf("%c(%d)", str[i], str[i]);
+    }
+
     return 0;
 }
+
+
+
 
 
 
